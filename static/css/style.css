@@ -1,0 +1,15 @@
+.jumbotron {
+    background-image: url("../images/circles.png");
+    background-size: 100% 100%;
+    text-align: center;
+    color: #f7f7f7;
+    font-family: 'Varela Round', serif;
+}
+
+.well {
+    font-family: 'Varela Round', serif;
+}
+
+.panel {
+    font-family: 'Varela Round', serif;
+}

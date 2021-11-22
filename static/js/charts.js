@@ -87,10 +87,14 @@ function buildCharts(sample) {
     }];
     // 9. Create the layout for the bar chart. 
     var barLayout = {
-      title: "Top 10 Bacteria Cultures Found"     
+      title: "<b>Top 10 Bacteria Cultures Found</b>",
+      margin: {t: 50},
+      font: {family: 'Varela Round'},
+      plot_bgcolor: "rgba(0,0,0,0)",
+      paper_bgcolor: "rgba(0,0,0,0)"     
     };
     // 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot("bar", barData, barLayout)
+    Plotly.newPlot("bar", barData, barLayout, {responsive: true})
 
     // 1. Create the trace for the bubble chart.
     var bubbleData = [{
@@ -103,14 +107,17 @@ function buildCharts(sample) {
 
     // 2. Create the layout for the bubble chart.
     var bubbleLayout = {
-      title: "Bacteria Cultures Per Sample",
+      title: "<b>Bacteria Cultures Per Sample</b>",
+      font: {family: 'Varela Round'},
       xaxis: {title: "OTU ID"},
       margin: {l: 80, r: 80, b: 80, t: 25}, 
-      hovermode: "closest"     
+      hovermode: "closest",
+      plot_bgcolor: "rgba(0,0,0,0)",
+      paper_bgcolor: "rgba(0,0,0,0)"     
     };
 
     // 3. Use Plotly to plot the data with the layout.
-    Plotly.newPlot("bubble", bubbleData, bubbleLayout);
+    Plotly.newPlot("bubble", bubbleData, bubbleLayout, {responsive: true});
 
     // 1. Create a variable that filters the metadata array for the object with the desired sample number.
     var resultArray = data.metadata.filter(sampleObj => sampleObj.id == sample);
@@ -143,10 +150,12 @@ function buildCharts(sample) {
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = {
       width: 500,
-      height: 400          
+      height: 400,
+      font: {family: 'Varela Round'},
+      paper_bgcolor: "rgba(0,0,0,0)"        
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
-    Plotly.newPlot("gauge", gaugeData, gaugeLayout);
+    Plotly.newPlot("gauge", gaugeData, gaugeLayout, {responsive: true});
   });
 }
